@@ -167,6 +167,9 @@ public class CauseServiceImpl implements CauseService {
             }
 
             String clstype = rs.getString("A_CLSTYPE");
+            if (clstype == null) {
+                continue;
+            }
             String cls = clstype.substring(0,3);
 
             Applicant applicant=null;
