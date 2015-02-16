@@ -108,6 +108,7 @@ public class ApplicantsReport extends Report {
         cellStyle.setBorderLeft(CellStyle.BORDER_THIN);
         cellStyle.setBorderRight(CellStyle.BORDER_THIN);
         cellStyle.setBorderBottom(CellStyle.BORDER_THIN);
+        cellStyle.setVerticalAlignment(CellStyle.VERTICAL_TOP);
 
 
         cell = titleRow.createCell(0);
@@ -139,7 +140,6 @@ public class ApplicantsReport extends Report {
         }
 
 
-
         // Заполняем таблицу
 
         for (int rownum = 0; rownum < applicants.size(); rownum++) {
@@ -169,14 +169,6 @@ public class ApplicantsReport extends Report {
                 }
 
                 cell.setCellValue(value);
-
-                cellStyle = wb.createCellStyle();
-                cellStyle.setWrapText(true);
-                cellStyle.setBorderTop(CellStyle.BORDER_THIN);
-                cellStyle.setBorderLeft(CellStyle.BORDER_THIN);
-                cellStyle.setBorderRight(CellStyle.BORDER_THIN);
-                cellStyle.setBorderBottom(CellStyle.BORDER_THIN);
-                cellStyle.setVerticalAlignment(CellStyle.VERTICAL_TOP);
 
                 cell.setCellStyle(cellStyle);
             }
