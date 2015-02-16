@@ -36,3 +36,5 @@ resource = mfc.png
 
 # The main entry point for the application
 class = org.kesler.pvdstat.local.PVDStatLocalApp
+
+jvmarg = -Xmx1024M
