@@ -5,13 +5,11 @@ import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.collections.transformation.SortedList;
 import javafx.concurrent.Task;
-import javafx.concurrent.Worker;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.*;
 import javafx.scene.input.MouseEvent;
 import org.controlsfx.dialog.*;
-import org.controlsfx.dialog.Dialog;
 import org.kesler.pvdstat.local.domain.Cause;
 import org.kesler.pvdstat.local.domain.cause.Applicant;
 import org.kesler.pvdstat.local.gui.AbstractController;
@@ -135,7 +133,9 @@ public class MainController extends AbstractController{
 
         taskMessageLabel.textProperty().bind(currentTask.messageProperty());
 
-        new Thread(currentTask).start();
+        Thread thread = new Thread(currentTask);
+        thread.setDaemon(true);
+        thread.start();
     }
 
     private void updateStat(Collection<Cause> causes) {
@@ -182,7 +182,9 @@ public class MainController extends AbstractController{
 
             taskMessageLabel.textProperty().bind(currentTask.messageProperty());
 
-            new Thread(currentTask).start();
+            Thread thread = new Thread(currentTask);
+            thread.setDaemon(true);
+            thread.start();
         }
     }
 
