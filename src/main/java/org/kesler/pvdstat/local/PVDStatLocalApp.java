@@ -62,7 +62,7 @@ public class PVDStatLocalApp extends Application {
         mainController.showMain(stage,
                 "Статистика ПК ПВД",
                 new Image(org.kesler.pvdstat.local.PVDStatLocalApp.class.getResourceAsStream("/images/Bibble.png")),
-                800, 700
+                800, 550
         );
 
         if (defaultOptions) {
